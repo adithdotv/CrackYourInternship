@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    var max = 0;
+    var cheap = prices[0];
+    for(var i=0;i<=prices.length;i++)
+    {   
+        if(prices[i]<cheap){
+            cheap = prices[i]
+        }
+        else{
+            if(prices[i]-cheap > max){
+                max = prices[i]-cheap
+            }
+        }
+    }
+
+    return max
+};
